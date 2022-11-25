@@ -8,7 +8,7 @@ import numpy as np
 #   1: Y component of the vector pointing to the middle of the platform from the lander
 #   2: X component of the velocity vector of the lander
 #   3: Y component of the velocity vector of the lander
-OBSERVATION_SPACE_RESOLUTION = [None, None, None, None]  # TODO
+OBSERVATION_SPACE_RESOLUTION = [0, 0, 0, 0]  # TODO
 
 
 class LunarLanderAgentBase:
