@@ -7,7 +7,7 @@ public class LunarLanderAgentBase {
     //   1: Y component of the vector pointing to the middle of the platform from the lander
     //   2: X component of the velocity vector of the lander
     //   3: Y component of the velocity vector of the lander
-    static final int[] OBSERVATION_SPACE_RESOLUTION = {0, 0, 0, 0}; // TODO
+    static final int[] OBSERVATION_SPACE_RESOLUTION = {60, 60, 14, 14};
 
     final double[][] observationSpace;
     double[][][][][] qTable;
