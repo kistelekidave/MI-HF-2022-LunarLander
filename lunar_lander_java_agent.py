@@ -6,8 +6,8 @@ from communication_master import CommunicationMaster
 classname = 'StudentCodeBinder'
 filename = 'StudentCodeBinder.java'
 
-java_exec_path = ''  # TODO
-javac_exec_path = ''  # TODO
+java_exec_path = 'C:\\Program Files\\Java\\jdk-11\\bin\\java.exe'
+javac_exec_path = 'C:\\Program Files\\Java\\jdk-11\\bin\\javac.exe'
 
 
 class LunarLanderJavaAgent:

@@ -4,7 +4,40 @@ import java.util.HashMap;
 import static java.lang.Math.min;
 
 public class LunarLanderEvaluator {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+        double sum = 0;
+        int count1 = 0;
+        final int N = 20;
+        final double[] res = new double[N];
+        final int[] count = new int[N];
+        /*IntStream.range(0, N).parallel().forEach(i -> {
+            double resb = run(args);
+            res[i] = resb;
+            if (resb*12 >= 8) {
+                count[i] = 1;
+            }
+        });*/
+
+        for (int i = 0; i < N; i++) {
+            double resb = run(args);
+            res[i] = resb;
+            if (resb*12 >= 10) {
+                count[i] = 1;
+            }
+        }
+
+        sum = Arrays.stream(res).sum();
+        count1 = Arrays.stream(count).sum();
+
+        double avg = sum / N;
+        double max = Arrays.stream(res).max().getAsDouble();
+
+        System.out.println("Avg: " + (avg*12));
+        System.out.println("Count: " + count1);
+        System.out.println("Max: " + (max*12));
+    }
+	
+    public static double run(String[] args) {
         int nIterations = (int) 1e6;
         int iteration = 0;
 
@@ -89,6 +122,7 @@ public class LunarLanderEvaluator {
         double pointFraction = min((double) earnedPoints / (double) maxPoints, 1.0);
 
         System.out.println("{\"fraction\": " + pointFraction + "}");
-
+        return pointFraction;
     }
+    
 }
